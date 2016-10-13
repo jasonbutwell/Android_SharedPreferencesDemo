@@ -1,8 +1,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:balloonberry="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/menu_add"
-        android:title="@+id/menu_add_item"
-        android:orderInCategory="10"
-        balloonberry:showAsAction="always"
-        android:icon="@android:drawable/ic_menu_add" />
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+
+    <item android:id="@+id/action_settings1" android:title="Item 1"
+        android:orderInCategory="100" app:showAsAction="always"
+        android:icon="@android:drawable/ic_menu_add"/>
+
+    <item android:id="@+id/action_settings2" android:title="Item 2"
+        android:orderInCategory="100" app:showAsAction="always"
+        android:icon="@android:drawable/ic_input_add"/>
+
+    <item android:id="@+id/action_settings3" android:title="Item 3"
+        android:orderInCategory="100" app:showAsAction="always"
+        android:icon="@android:drawable/ic_delete"/>
+
 </menu>
