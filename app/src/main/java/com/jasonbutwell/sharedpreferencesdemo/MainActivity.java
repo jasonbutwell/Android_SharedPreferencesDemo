@@ -41,23 +41,33 @@ public class MainActivity extends AppCompatActivity {
         // Shows an alert with Yes and No options and implements the listeners for those buttons
         // button presses are sent to the logCat for now.
 
-        new AlertDialog.Builder(this)
-                .setIcon(android.R.drawable.ic_dialog_alert)
-                .setTitle("Are you sure?")
-                .setMessage("Do you really want to do this?")
-                .setPositiveButton("yes", new DialogInterface.OnClickListener() {
-                    @Override
+        AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+
+        alertDialog.setTitle("Alert");
+        alertDialog.setMessage("Alert message to be shown");
+
+        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "NO",
+                new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        Log.i("Button tapped", "Yes");
+                        dialog.dismiss();
                     }
-                })
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
+                });
+
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        Log.i("Button tapped","No");
+                        dialog.dismiss();
                     }
-                })
-                .show();
+                });
+
+        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "YES",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+        alertDialog.show();
     }
 
     @Override
